@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   description:
     "Passionate full-stack developer specializing in building high-performance web applications using modern technologies like Next.js, React.js, and Node.js. Focused on scalability, security, and seamless user experiences.",
   icons: {
-    icon: "/thh.jpg",
-    shortcut: "/thh.jpg",
-    apple: "/thh.jpg",
+    icon: "/thh.webp",
+    shortcut: "/thh.webp",
+    apple: "/thh.webp",
   },
   keywords: [
     "Yassin Ibrahim",
