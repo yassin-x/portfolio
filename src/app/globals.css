@@ -87,6 +87,9 @@
   .container {
     @apply mx-auto px-4 md:px-8 lg:px-16 xl:px-32;
   }
+  .section-gap {
+    @apply py-5;
+  }
 }
 
 html[lang="en"] div[role="dialog"] button {

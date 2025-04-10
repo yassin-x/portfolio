@@ -7,10 +7,10 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
-    <section className="container pt-20 md:pt-24">
+    <section className="container section-gap">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center justify-center">
         <div className="flex flex-col justify-center gap-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary">
             Hello, I&apos;m{" "}
             <TypeAnimation
               sequence={[

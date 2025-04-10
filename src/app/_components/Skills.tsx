@@ -29,7 +29,7 @@ export default function Skills() {
     [SiAuth0],
   ];
   return (
-    <section className="pt-20 md:pt-24">
+    <section className="section-gap">
       <div className="text-center">
         <MainHeading title={"Skills"} subTitle={"What i do"} />
       </div>
