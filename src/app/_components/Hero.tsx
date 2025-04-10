@@ -10,7 +10,7 @@ export default function Hero() {
     <section className="container pt-20 md:pt-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center justify-center">
         <div className="flex flex-col justify-center gap-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary ">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary">
             Hello, I&apos;m{" "}
             <TypeAnimation
               sequence={[
@@ -55,12 +55,11 @@ export default function Hero() {
           <Image
             src={"/me.jpg"}
             alt="Yassin Ibrahim"
-            width={744}
-            height={1116}
-            quality={100}
+            width={980}
+            height={1080}
             loading="eager"
             priority={true}
-            className="w-full h-full object-cover shadow-lg"
+            className="w-full h-full object-cover shadow-lg mx-auto"
           />
         </div>
       </div>
