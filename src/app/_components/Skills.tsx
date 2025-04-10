@@ -29,11 +29,11 @@ export default function Skills() {
     [SiAuth0],
   ];
   return (
-    <section className="section-gap">
+    <section className="section-gap space-y-4">
       <div className="text-center">
         <MainHeading title={"Skills"} subTitle={"What i do"} />
       </div>
-      <div className="container flex flex-col items-center gap-6 py-4 md:py-8  select-none">
+      <div className="container flex flex-col items-center gap-6 select-none">
         {skills.map((row, rowIndex) => (
           <div
             key={rowIndex}
