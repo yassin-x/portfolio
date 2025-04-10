@@ -3,7 +3,6 @@ import Link from "@/components/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
-import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
@@ -11,20 +10,7 @@ export default function Hero() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center justify-center">
         <div className="flex flex-col justify-center gap-4">
           <h2 className="text-2xl md:text-3xl font-bold text-primary">
-            Hello, I&apos;m{" "}
-            <TypeAnimation
-              sequence={[
-                "Yassin Ibrahim",
-                2000,
-                "Full-Stack Web Developer < / >",
-                2000,
-              ]}
-              speed={10}
-              wrapper="span"
-              cursor={true}
-              repeat={Infinity}
-              className="text-primary select-none"
-            />
+            Hello, I&apos;m Yassin Ibrahim
           </h2>
           <p className="text-muted-foreground text-sm md:text-base">
             Passionate full-stack developer specializing in building
