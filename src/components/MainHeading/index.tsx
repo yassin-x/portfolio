@@ -12,7 +12,7 @@ export default function MainHeading({
       <h2 className="uppercase text-muted-foreground font-semibold leading-4">
         {subTitle}
       </h2>
-      <p className="text-primary font-bold text-4xl italic">{title}</p>
+      <p className="text-primary font-bold text-4xl italic mb-4">{title}</p>
     </>
   );
 }
