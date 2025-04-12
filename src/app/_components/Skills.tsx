@@ -45,7 +45,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="section-gap space-y-4">
+    <section className="section-gap">
       <div className="text-center">
         <MainHeading title={"Skills"} subTitle={"What i do"} />
       </div>
