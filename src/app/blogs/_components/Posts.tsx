@@ -33,6 +33,7 @@ export default function Posts({ blogs }: { blogs: Blogs[] }) {
                     alt={blog.title}
                     width={980}
                     height={1080}
+                    loading="lazy"
                     className="w-full h-[200px] object-cover rounded-lg group-hover:scale-105 transition-all duration-300 ease-in-out"
                   />
                 </div>

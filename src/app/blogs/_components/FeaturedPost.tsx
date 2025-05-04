@@ -21,6 +21,8 @@ export default function FeaturedPost({ blog }: { blog: Blogs }) {
                 alt={blog.title}
                 width={980}
                 height={1080}
+                loading="eager"
+                priority
                 className="w-[600px] h-[200px] object-cover rounded-lg"
               />
             </div>

@@ -72,7 +72,7 @@ export default function Hero() {
             width={980}
             height={1080}
             loading="eager"
-            priority={true}
+            priority
             className="w-full h-full object-cover shadow-lg mx-auto"
           />
         </div>
