@@ -41,7 +41,6 @@ const MarkdownRenderer = ({ markdown }: Props) => {
               </code>
             );
           },
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           iframe({ node, ...props }) {
             return (
               <div className="my-6 aspect-video">
@@ -53,7 +52,6 @@ const MarkdownRenderer = ({ markdown }: Props) => {
               </div>
             );
           },
-
         }}
       >
         {markdown}

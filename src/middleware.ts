@@ -24,7 +24,6 @@ export default withAuth(
   },
   {
     callbacks: {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       async authorized(params) {
         return true;
       },
