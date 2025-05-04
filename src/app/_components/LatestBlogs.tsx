@@ -1,6 +1,7 @@
 import Link from "@/components/link";
 import MainHeading from "@/components/MainHeading";
 import { Pages } from "@/constants/enums";
+import { formatDate } from "@/lib/formatDate";
 import { getAllBlogs } from "@/server/db/blog";
 import Image from "next/image";
 import React from "react";
@@ -16,7 +17,7 @@ export default async function LatestBlogs() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
           {blogs.slice(0, 3).map((blog) => (
             <Link key={blog.id} href={`/${Pages.Blogs}/${blog.link}`}>
-              <div className="w-full p-4 rounded-lg border-2 border-accent group">
+              <div className="w-full p-4 rounded-lg border-2 border-accent group flex flex-col gap-2 justify-evenly">
                 <div>
                   <Image
                     src={blog.image}
@@ -32,6 +33,11 @@ export default async function LatestBlogs() {
                     {blog.title}
                   </h2>
                   <p className="text-muted-foreground">{blog.description}</p>
+                </div>
+                <div className="flex justify-end">
+                  <span className="text-sm text-primary/80 bg-accent px-2 py-1 rounded">
+                    {formatDate(blog.createdAt)}
+                  </span>
                 </div>
               </div>
             </Link>

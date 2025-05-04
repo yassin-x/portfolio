@@ -1,5 +1,6 @@
 import Link from "@/components/link";
 import { Pages } from "@/constants/enums";
+import { formatDate } from "@/lib/formatDate";
 import { Blogs } from "@prisma/client";
 import Image from "next/image";
 import React from "react";
@@ -26,9 +27,12 @@ export default function FeaturedPost({ blog }: { blog: Blogs }) {
                 className="w-[600px] h-[200px] object-cover rounded-lg"
               />
             </div>
-            <div className="flex flex-col items-center md:items-start gap-2 mt-4">
+            <div className="flex flex-col items-center md:items-start gap-2 mt-4 max-w-md">
               <h2 className="text-xl font-bold text-primary">{blog.title}</h2>
               <p className="text-muted-foreground">{blog.description}</p>
+              <span className="text-sm text-primary/80 bg-accent px-2 py-1 rounded">
+                {formatDate(blog.createdAt)}
+              </span>
             </div>
           </div>
         </div>
