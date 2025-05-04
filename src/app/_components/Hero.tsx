@@ -65,7 +65,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="p-2 border-accent border-2 shadow-lg max-w-[300px] overflow-hidden mx-auto">
+        <div className="p-2 border-accent border-2 shadow-lg max-w-[300px] overflow-hidden mx-auto hidden md:block">
           <Image
             src={"/me.webp"}
             alt="Yassin Ibrahim"
