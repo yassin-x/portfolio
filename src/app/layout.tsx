@@ -28,6 +28,7 @@ export const metadata: Metadata = {
       url: "/thh.webp",
     },
   },
+
   keywords: [
     "Yassin Ibrahim",
     "Full-Stack Developer",

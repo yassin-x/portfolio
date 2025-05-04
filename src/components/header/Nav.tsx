@@ -25,13 +25,13 @@ export default function Nav({
   const { data } = useClientSession(initialSession);
   return (
     <nav>
-      <ul className="md:flex justify-center items-center gap-3 hidden">
-        {links.map((link) => (
-          <li key={link.name}>
+      <ul className="hidden md:flex items-center justify-center gap-4">
+        {links.map((link, index) => (
+          <li key={index}>
             <Link
-              href={`/${link.href}`}
-              className={`text-muted-foreground hover:text-primary transition-colors duration-200 ease-in-out ${
-                pathname === `/${link.href}` ? "text-primary" : ""
+              href={link.href}
+              className={`text-muted-foreground hover:text-primary transition-colors duration-200 tracking-wider ease-in-out  ${
+                pathname.startsWith(link.href) ? "text-primary" : ""
               }`}
             >
               {link.name}
@@ -42,7 +42,9 @@ export default function Nav({
           <li>
             <Link
               href={`/${Routes.Admin}`}
-              className={`text-muted-foreground hover:text-primary transition-colors duration-200 ease-in-out`}
+              className={`text-muted-foreground hover:text-primary transition-colors duration-200 tracking-wider ease-in-out ${
+                pathname.startsWith(Routes.Admin) ? "text-primary" : ""
+              }`}
             >
               Admin
             </Link>
@@ -50,40 +52,78 @@ export default function Nav({
         )}
       </ul>
       <Button
-        className="md:hidden"
+        className={`md:hidden`}
         variant={"outline"}
         onClick={() => setMenuOpen(!menuOpen)}
       >
         <MenuIcon />
       </Button>
+
       <div
-        className={`${
-          menuOpen
-            ? "flex translate-x-0 opacity-100 pointer-events-auto"
-            : "translate-x-full opacity-0 pointer-events-none"
-        } backdrop-blur-2xl h-full fixed top-0 right-0 w-full z-50 p-6 flex-col md:translate-x-full transition-transform duration-300 ease-in-out`}
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:translate-x-full transition-opacity duration-300 ease-in-out
+       ${
+         menuOpen
+           ? "flex translate-x-0 pointer-events-auto"
+           : "translate-x-full pointer-events-none"
+       }`}
+        onClick={() => setMenuOpen(false)}
       >
-        <Button
-          className="md:hidden w-fit fixed top-4 right-4"
-          variant={"outline"}
-          onClick={() => setMenuOpen(!menuOpen)}
+        <div
+          className="absolute top-4 right-4 z-50"
+          onClick={(e) => e.stopPropagation()}
         >
-          <XIcon />
-        </Button>
-        <ul className="flex flex-col items-start gap-3">
-          {links.map((link) => (
-            <li key={link.name}>
+          <Button
+            className="md:hidden"
+            variant="outline"
+            onClick={() => setMenuOpen(false)}
+          >
+            <XIcon />
+          </Button>
+        </div>
+      </div>
+
+      <div
+        className={`bg-card/20 backdrop-blur-2xl h-screen overflow-y-hidden fixed top-0 left-0 w-[70%] z-50 p-6 flex-col md:-translate-x-full transition-transform duration-300 ease-in-out ${
+          menuOpen
+            ? "flex translate-x-0 pointer-events-auto"
+            : "-translate-x-full pointer-events-none"
+        }`}
+      >
+        {/* <div className="element-center">
+          <Image
+            src={"/images/logo.png"}
+            width={980}
+            height={1080}
+            alt="Visionaries logo"
+            priority
+            className="w-12 h-12"
+          />
+        </div> */}
+        <ul className="flex flex-col items-start gap-4 mt-4">
+          {links.map((link, index) => (
+            <li key={index}>
               <Link
-                href={`/${link.href}`}
-                className={`text-muted-foreground hover:text-primary transition-colors duration-200 ease-in-out ${
-                  pathname === link.href ? "text-primary" : ""
+                href={link.href}
+                className={`text-muted-foreground hover:text-primary transition-colors duration-200 tracking-wider ease-in-out ${
+                  pathname.startsWith(link.href) ? "text-primary" : ""
                 }`}
-                onClick={() => setMenuOpen(false)}
               >
                 {link.name}
               </Link>
             </li>
           ))}
+          {data?.user && (
+            <li>
+              <Link
+                href={`/${Routes.Admin}`}
+                className={`text-muted-foreground hover:text-primary transition-colors duration-200 tracking-wider ease-in-out ${
+                  pathname.startsWith(Routes.Admin) ? "text-primary" : ""
+                }`}
+              >
+                Admin
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
