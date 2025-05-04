@@ -7,7 +7,7 @@ import { BsFacebook, BsGithub, BsWhatsapp, BsYoutube } from "react-icons/bs";
 
 export default function Hero() {
   return (
-    <section className="container section-gap-xl">
+    <section className="container section-gap">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center justify-center">
         <div className="flex flex-col justify-center gap-4 text-center md:text-start">
           <h2 className="text-2xl md:text-3xl font-bold text-primary">
