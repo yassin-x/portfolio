@@ -1,14 +1,14 @@
 "use client";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { Pages } from "@/constants/enums";
-import { Blogs } from "@/generated/prisma";
+import { Blogs } from "@prisma/client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
 export default function BlogView({ blog }: { blog: Blogs }) {
   const router = useRouter();
-  
+
   useEffect(() => {
     if (!blog) {
       router.push(`/${Pages.Blogs}`);

@@ -1,7 +1,6 @@
 "use client";
 import FormFields from "@/components/FormFields/FormFields";
 import { Pages, Routes } from "@/constants/enums";
-import { Blogs } from "@/generated/prisma";
 import useFormFields from "@/hooks/useFormFields";
 import { IFormField, initialState } from "@/types/app";
 import React, { useActionState, useEffect } from "react";
@@ -11,6 +10,7 @@ import { LoaderIcon } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { Blogs } from "@prisma/client";
 
 export default function Form({ data }: { data: Blogs }) {
   const { getFormFields } = useFormFields({ slug: Pages.Blogs });

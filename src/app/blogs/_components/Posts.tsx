@@ -1,6 +1,6 @@
 import Link from "@/components/link";
 import { Pages } from "@/constants/enums";
-import { Blogs } from "@/generated/prisma";
+import { Blogs } from "@prisma/client";
 import Image from "next/image";
 import React from "react";
 
