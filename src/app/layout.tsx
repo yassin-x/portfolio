@@ -6,6 +6,7 @@ import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 import { getServerSession } from "next-auth";
 import { NextAuthOptions } from "@/server/NextAuth";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -87,6 +88,7 @@ export default async function RootLayout({
         <NextAuthSessionProvider>
           <Header initialSession={initialSession} />
           {children}
+          <Analytics />
           <Toaster
             position="top-center"
             duration={3000}
