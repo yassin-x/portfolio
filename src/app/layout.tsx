@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
+import { getServerSession } from "next-auth";
+import { NextAuthOptions } from "@/server/NextAuth";
+import { Toaster } from "sonner";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -18,6 +22,10 @@ export const metadata: Metadata = {
     icon: "/thh.webp",
     shortcut: "/thh.webp",
     apple: "/thh.webp",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/thh.webp",
+    },
   },
   keywords: [
     "Yassin Ibrahim",
@@ -66,16 +74,26 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const initialSession = await getServerSession(NextAuthOptions);
+
   return (
     <html lang="en">
       <body className={`${roboto.className}`}>
-        <Header />
-        {children}
+        <NextAuthSessionProvider>
+          <Header initialSession={initialSession} />
+          {children}
+          <Toaster
+            position="top-center"
+            duration={3000}
+            theme="dark"
+            closeButton={true}
+          />
+        </NextAuthSessionProvider>
       </body>
     </html>
   );

@@ -4,43 +4,50 @@ import Link from "../link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { MenuIcon, XIcon } from "lucide-react";
+import { useClientSession } from "@/hooks/useClientSession";
+import { Session } from "next-auth";
+import { Pages, Routes } from "@/constants/enums";
 
-export default function Nav() {
+export default function Nav({
+  initialSession,
+}: {
+  initialSession: Session | null;
+}) {
   const links = [
     {
-      id: crypto.randomUUID(),
       name: "Blogs",
-      href: "/blogs",
-    },
-    {
-      id: crypto.randomUUID(),
-      name: "Services",
-      href: "/services",
-    },
-    {
-      id: crypto.randomUUID(),
-      name: "Contact Us",
-      href: "/contact",
+      href: Pages.Blogs,
     },
   ];
 
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { data } = useClientSession(initialSession);
   return (
     <nav>
       <ul className="md:flex justify-center items-center gap-3 hidden">
         {links.map((link) => (
-          <li key={link.id}>
+          <li key={link.name}>
             <Link
-              href={link.href}
+              href={`/${link.href}`}
               className={`text-muted-foreground hover:text-primary transition-colors duration-200 ease-in-out ${
-                pathname === link.href ? "text-primary" : ""
+                pathname === `/${link.href}` ? "text-primary" : ""
               }`}
             >
               {link.name}
             </Link>
           </li>
         ))}
+        {data?.user && (
+          <li>
+            <Link
+              href={`/${Routes.Admin}`}
+              className={`text-muted-foreground hover:text-primary transition-colors duration-200 ease-in-out`}
+            >
+              Admin
+            </Link>
+          </li>
+        )}
       </ul>
       <Button
         className="md:hidden"
@@ -65,9 +72,9 @@ export default function Nav() {
         </Button>
         <ul className="flex flex-col items-start gap-3">
           {links.map((link) => (
-            <li key={link.id}>
+            <li key={link.name}>
               <Link
-                href={link.href}
+                href={`/${link.href}`}
                 className={`text-muted-foreground hover:text-primary transition-colors duration-200 ease-in-out ${
                   pathname === link.href ? "text-primary" : ""
                 }`}
