@@ -41,7 +41,7 @@ const MarkdownRenderer = ({ markdown }: Props) => {
               </code>
             );
           },
-          iframe({ node, ...props }) {
+          iframe({ ...props }) {
             return (
               <div className="my-6 aspect-video">
                 <iframe

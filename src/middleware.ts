@@ -24,7 +24,7 @@ export default withAuth(
   },
   {
     callbacks: {
-      async authorized(params) {
+      async authorized() {
         return true;
       },
     },
