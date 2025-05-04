@@ -16,19 +16,19 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Yassin Ibrahim",
+  title: "Yassin Ibrahim | Full-Stack Web Developer",
   description:
     "Passionate full-stack developer specializing in building high-performance web applications using modern technologies like Next.js, React.js, and Node.js. Focused on scalability, security, and seamless user experiences.",
   icons: {
-    icon: "/thh.webp",
-    shortcut: "/thh.webp",
-    apple: "/thh.webp",
+    icon: "/images/thh.webp",
+    shortcut: "/images/thh.webp",
+    apple: "/images/thh.webp",
     other: {
       rel: "apple-touch-icon-precomposed",
-      url: "/thh.webp",
+      url: "/images/thh.webp",
     },
   },
-
+  robots: "index, follow",
   keywords: [
     "Yassin Ibrahim",
     "Full-Stack Developer",
@@ -74,6 +74,39 @@ export const metadata: Metadata = {
     "Programming",
     "Tech Enthusiast",
   ],
+
+  openGraph: {
+    title: "Yassin Ibrahim | Full-Stack Web Developer",
+    description:
+      "Passionate full-stack developer specializing in building high-performance web applications using modern technologies like Next.js, React.js, and Node.js. Focused on scalability, security, and seamless user experiences.",
+    images: [
+      {
+        url: "/images/thh.webp",
+        width: 800,
+        height: 600,
+        alt: "Yassin Ibrahim | Full-Stack Web Developer",
+      },
+    ],
+  },
+  twitter: {
+    title: "Yassin Ibrahim | Full-Stack Web Developer",
+    description:
+      "Passionate full-stack developer specializing in building high-performance web applications using modern technologies like Next.js, React.js, and Node.js. Focused on scalability, security, and seamless user experiences.",
+    card: "summary_large_image",
+    images: [
+      {
+        url: "/images/thh.webp",
+        width: 800,
+        height: 600,
+        alt: "Yassin Ibrahim | Full-Stack Web Developer",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://yassin.icu/",
+  },
+  creator: "Yassin Ibrahim",
+  authors: [{ name: "Yassin Ibrahim", url: "https://yassin.icu/" }],
 };
 
 export default async function RootLayout({
