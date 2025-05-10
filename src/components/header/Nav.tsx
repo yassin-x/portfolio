@@ -18,6 +18,10 @@ export default function Nav({
       name: "Blogs",
       href: Pages.Blogs,
     },
+    {
+      name: "Projects",
+      href: Pages.Projects,
+    },
   ];
 
   const pathname = usePathname();

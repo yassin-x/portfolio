@@ -1,5 +1,6 @@
 import Link from "@/components/link";
 import MainHeading from "@/components/MainHeading";
+import { buttonVariants } from "@/components/ui/button";
 import { Pages } from "@/constants/enums";
 import { formatDate } from "@/lib/formatDate";
 import { getAllBlogs } from "@/server/db/blog";
@@ -13,7 +14,7 @@ export default async function LatestBlogs() {
       <div className="text-center">
         <MainHeading title={"What's New"} subTitle={"Latest Posts"} />
       </div>
-      <div className="element-center md:block">
+      <div className="element-center md:block flex-col">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
           {blogs.slice(0, 3).map((blog) => (
             <Link key={blog.id} href={`/${Pages.Blogs}/${blog.link}`}>
@@ -42,6 +43,14 @@ export default async function LatestBlogs() {
               </div>
             </Link>
           ))}
+        </div>
+        <div className="text-center py-4 md:py-6">
+          <Link
+            href={`/${Pages.Blogs}`}
+            className={`${buttonVariants({ variant: "default" })} rounded-md`}
+          >
+            View more
+          </Link>
         </div>
       </div>
     </section>
