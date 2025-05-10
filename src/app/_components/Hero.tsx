@@ -31,7 +31,6 @@ export default function Hero() {
               target="_blank"
               className={`${buttonVariants({
                 variant: "outline",
-                rounded: "md",
               })}`}
             >
               Preview Cv

@@ -10,7 +10,7 @@ import DeleteProject from "./DeleteProject";
 export default async function AllProjects() {
   const projects = await getAllProjects();
   return (
-    <section className="container section-gap">
+    <section className="container-sm section-gap">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
         {projects.map((project) => (
           <div

@@ -10,7 +10,7 @@ import DeleteBlog from "./DeleteBlog";
 export default async function AllBlogs() {
   const blogs = await getAllBlogs();
   return (
-    <section className="container section-gap">
+    <section className="container-sm section-gap">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
         {blogs.map((blog) => (
           <div

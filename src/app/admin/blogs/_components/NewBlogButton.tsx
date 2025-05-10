@@ -9,7 +9,7 @@ export default function NewBlogButton() {
       <div className="text-center">
         <Link
           href={`/${Routes.Admin}/${Pages.Blogs}/${Pages.New}`}
-          className={`${buttonVariants({ variant: "default", rounded: "md" })}`}
+          className={`${buttonVariants({ variant: "default" })}`}
         >
           New Blog
         </Link>

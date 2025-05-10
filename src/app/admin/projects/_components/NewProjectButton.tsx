@@ -9,7 +9,7 @@ export default function NewProjectButton() {
       <div className="text-center">
         <Link
           href={`/${Routes.Admin}/${Pages.Projects}/${Pages.New}`}
-          className={`${buttonVariants({ variant: "default", rounded: "md" })}`}
+          className={`${buttonVariants({ variant: "default" })}`}
         >
           New Project
         </Link>
