@@ -27,8 +27,8 @@ export default function Posts({ blogs }: { blogs: Blogs[] }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-center">
           {otherBlogs.map((blog) => (
             <Link key={blog.id} href={`/${Pages.Blogs}/${blog.link}`}>
-              <div className="w-full p-4 rounded-lg border-2 border-accent group flex flex-col gap-2 justify-evenly">
-                <div>
+              <div className="w-full h-full p-4 rounded-lg border-2 border-accent group flex flex-col gap-2 justify-evenly">
+                <div className="h-full">
                   <Image
                     src={blog.image}
                     alt={blog.title}
@@ -38,7 +38,7 @@ export default function Posts({ blogs }: { blogs: Blogs[] }) {
                     className="w-full h-[200px] object-cover rounded-lg group-hover:scale-105 transition-all duration-300 ease-in-out"
                   />
                 </div>
-                <div className="flex flex-col items-center gap-2 mt-4">
+                <div className="flex flex-col items-center md:items-start gap-2 h-full">
                   <h2 className="text-xl font-bold text-primary">
                     {blog.title}
                   </h2>

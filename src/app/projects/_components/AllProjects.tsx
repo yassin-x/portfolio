@@ -19,9 +19,9 @@ export default function AllProjects({ data }: { data: Projects[] }) {
           {data.map((project) => (
             <div
               key={project.id}
-              className="w-full p-4 rounded-lg border-2 border-accent flex flex-col gap-2 justify-evenly"
+              className="w-full h-full p-4 rounded-lg border-2 border-accent flex flex-col gap-2 justify-evenly"
             >
-              <div>
+              <div className="h-full">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -29,10 +29,11 @@ export default function AllProjects({ data }: { data: Projects[] }) {
                     mask: false,
                     toolbarRender: () => null,
                   }}
-                  className="w-full h-[300px] object-cover rounded-lg hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer"
+                  className="object-cover hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer rounded-lg h-full max-h-[300px] w-full"
                 />
               </div>
-              <div className="flex flex-col items-center gap-2 mt-4">
+
+              <div className="flex flex-col items-center md:items-start gap-2 h-full">
                 <h2 className="text-xl font-bold text-primary">
                   {project.title}
                 </h2>
