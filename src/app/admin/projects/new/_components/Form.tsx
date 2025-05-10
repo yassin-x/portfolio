@@ -55,7 +55,7 @@ export default function Form() {
           />
         </div>
       </div>
-      {getFormFields().map((field: IFormField) => {
+      {getFormFields().slice(1).map((field: IFormField) => {
         return (
           <div key={field.name} className="mb-4">
             <FormFields {...field} error={state.error} />
