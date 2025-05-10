@@ -50,7 +50,7 @@ export default function Form() {
         >
           <UploadImage
             setSelectedImageF={setSelectedImage}
-            className={`w-full h-[200px] rounded-lg border`}
+            className={`w-full h-[300px] rounded-lg border`}
             name="image"
           />
         </div>
